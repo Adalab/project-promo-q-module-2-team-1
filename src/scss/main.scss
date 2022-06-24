@@ -1,9 +1,12 @@
-/*@import 'core/variables';
+@import 'core/variables';
 @import 'core/reset';
-@import 'components/code';
-@import 'components/links';
-@import 'layout/page';
+// @import 'components/code';
+// @import 'components/links';
+@import 'layout/app_data';
 @import 'layout/header';
 @import 'layout/footer';
-@import 'pages/index';
-*/
+@import 'layout/app_design';
+@import 'layout/app_preview';
+@import 'layout/app_share';
+@import 'layout/index_main';
+
