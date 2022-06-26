@@ -6,34 +6,32 @@
     border-top: solid 1px;
     border-color: $background_border;
     font-family: $font_main;
-    box-sizing: border-box;
+    height: 15vh;
+    padding-bottom: 20px;
     @media all and (min-width: 768px) {
+        height: 10vh;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
     }
-}
-
-.footer__text {
-    font-size: 14px;
-    line-height: 20px;
-    color: $background_border;
-    width: 198px;
-    height: 20px;
-    margin: 18px 0 22px 0;
-    @media all and (min-width: 768px) {
-        margin: 18px 0 22px 41px;
+    &__text {
+        font-size: 14px;
+        line-height: 20px;
+        color: $background_border;
+        text-align: center;
+        width: 62%;
+        padding: 10px;
+        @media all and (min-width: 768px) {
+            padding: 18px 0 22px 41px;
+        }
     }
-}
-
-.footer__logo {
-    margin-bottom: 20px;
-    @media all and (min-width: 768px) {
-        margin: 10px 40px 10px;
+    &__logo {
+        @media all and (min-width: 768px) {
+            padding: 10px 40px 10px;
+        }
+        &--img {
+            width: 103px;
+            height: 40px;
+        }
     }
-}
-
-.footer__logo img {
-    width: 103px;
-    height: 40px;
 }

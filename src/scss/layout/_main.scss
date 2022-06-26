@@ -1,0 +1,97 @@
+.main-container {
+    height: 85vh;
+    background-color: $background_primary;
+    @media all and (min-width: 768px) {
+        height: 90vh;
+     }
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    padding-top: 8vh;
+    height: 45vh;
+    @media all and (min-width: 768px) {
+        padding-top: 3.5vh;
+     }
+    &__title {
+        color: $font_color_title;
+        font-family: $font_title;
+        font-size: 19.2px;
+        margin-bottom: 5px;
+        width: 70%;
+        @media all and (min-width: 768px) {
+            font-size: 24px;
+            width: 36.20%;
+         }
+    }
+    &__text {
+        color: $font_color_subtitle;
+        font-family: $font_main;
+        font-size: 12.8px;
+        padding-bottom: 4%;
+        width: 70vw;
+        @media all and (min-width: 768px) {
+            width: 43%;
+            font-size: 16px;
+            line-height: 22px;
+        }
+    }
+    &__icons {
+        width: 75vw;
+        height: 73.8px;
+        display: flex;
+        justify-content: space-around;
+        padding: 15px 20px 10px 20px;
+        border: 1.6px solid rgba(225, 115, 52, 0.21);
+        border-radius: 5px;
+        @media all and (min-width: 768px) {
+            width: 43vw;
+            height: 86px;
+            border: 2px solid rgba(225, 115, 52, 0.21);
+        }
+        &--text {
+            font-family: $font_main;
+            font-size: 12.8px;
+            color: $font_color_primary;
+            @media all and (min-width: 768px) {
+                font-size: 16px;
+            }
+        }
+    }
+    &__link {
+        background-color: $background_link;
+        text-transform: uppercase;
+        font-family: $font_main;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 21px;
+        padding: 10px 20px 10px 20px;
+        margin-top: 9vh;
+        margin-bottom: 7vh;
+        
+        @media all and (min-width: 768px) {
+            margin-top: 13vh;
+            margin-bottom: 5vh;
+        }
+        @media all and (min-width: 1024px) {
+            margin-top: 17vh;
+            margin-bottom: 3.5vh;
+
+        }
+        &--link {
+            color: $background_secondary;
+            text-decoration: none;
+        }
+    }
+}
+
+.main__icons i {
+    color: $font_color_title;
+    font-size: 22.4px;
+    @media all and (min-width: 768px) {
+        font-size: 28px;
+    }
+}
