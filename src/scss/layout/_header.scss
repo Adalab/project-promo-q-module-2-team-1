@@ -3,11 +3,11 @@
     height: 11vh;
     display: flex;
     align-items: center;
-    margin-left: 40px;
+    margin-left: 12.5vw;
     &__logo {
         width: 201px;
         height: 50px;
-        padding: 10px;
+        margin: 10px;
     }
 }
 .header {
@@ -19,6 +19,9 @@
     @media all and (min-width: 768px) {
         padding-top: 36vh;
         }
+    @media all and (min-width: 1024px) {
+            padding-top: 30vh;
+            }
     &__logo {
         width: 250px;
         height: 63px;
