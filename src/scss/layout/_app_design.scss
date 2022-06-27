@@ -4,11 +4,20 @@
   padding-top: 27px;
   padding-left: 20px;
   display: flex;
+  justify-content: space-between;
 }
 
 .fa-solid {
   color: $font_color_title;
   font-size: 18px;
+}
+
+.fa-object-ungroup {
+  margin-right: 10px;
+}
+
+.fa-angle-up {
+  margin-right: 20px;
 }
 
 .design-title {
@@ -22,12 +31,12 @@
 /*SELECCIÓN DE COLORES*/
 
 .design-colors {
-  display: flex;
   margin: 22px 20px 30px 39px;
+  display: flex;
   justify-content: space-between;
 }
 
-.select-colors {
+.design-colors .select-colors {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -40,10 +49,20 @@
   color: $font_color_primary;
 }
 
+.color-box-label {
+  display: flex;
+
+  align-items: center;
+}
+
+.color-box-input {
+  margin-right: 10px;
+  height: 17px;
+}
+
 .design-colors .color-div {
   height: 25px;
   width: 30px;
-  display: inline-block;
 }
 
 /* COLORES DE LAS CAJAS */
