@@ -1,0 +1,58 @@
+.share {
+  text-transform: uppercase;
+  font-family: $font_main;
+  font-weight: 700;
+  color: $font_color_primary;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.fa-share-nodes {
+  color: $font_color_title;
+}
+
+.submit_button {
+  background-color: #d5d5d5;
+  border-style: none;
+  border-radius: 12px;
+  text-transform: uppercase;
+  font-family: $font_main;
+  font-weight: 700;
+  color: #fff;
+  font-size: 18px;
+  height: 50px;
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
+}
+.font_success {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card_create {
+  font-family: $font_main;
+  font-weight: 700;
+  font-size: 18px;
+  color: $font_color_primary;
+  line-height: 20px;
+}
+
+.card_link {
+  font-family: $font_main;
+  font-weight: 700;
+  font-size: 12px;
+  color: $font_color_title;
+  text-decoration: none;
+}
+
+.button_twiter {
+  font-family: $font_main;
+  font-size: 14px;
+  color: #fff;
+  background-color: #00a0f5;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 3px;
+  padding: 5px 10px;
+}
