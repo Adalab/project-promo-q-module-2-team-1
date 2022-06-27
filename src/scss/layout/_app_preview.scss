@@ -60,16 +60,19 @@
 
         .preview-icon-contact{
             text-align: center;
-            color: $font_color_subtitle;
 
-            .preview-icon{
-                margin: 0 10px 0 0;
-                padding: 8px 8px;
-                border-radius: 50px;
-                border: solid 2px #A2DEAF;
+            .link-preview-icon{
+                color: $font_color_subtitle;
 
-                &:first-child{
-                    padding: 7px 10px;
+                .preview-icon{
+                    margin: 0 10px 0 0;
+                    padding: 8px 8px;
+                    border-radius: 50px;
+                    border: solid 2px #A2DEAF;
+    
+                    &:first-child{
+                        padding: 7px 10px;
+                    }
                 }
             }
         }
