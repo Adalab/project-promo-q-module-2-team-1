@@ -1,0 +1,103 @@
+/*SECCIÓN DEL TÍTULO*/
+
+.design {
+  padding-top: 27px;
+  padding-left: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.fa-solid {
+  color: $font_color_title;
+  font-size: 18px;
+}
+
+.fa-object-ungroup {
+  margin-right: 10px;
+}
+
+.fa-angle-up {
+  margin-right: 20px;
+}
+
+.design-title {
+  text-transform: uppercase;
+  font-family: $font_main;
+  font-weight: 700;
+  color: $font_color_primary;
+  font-size: 18px;
+}
+
+/*SELECCIÓN DE COLORES*/
+
+.design-colors {
+  margin: 22px 20px 30px 39px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.design-colors .select-colors {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.design-colors .colors-title {
+  text-transform: uppercase;
+  font-family: $font_main;
+  font-size: 14px;
+  color: $font_color_primary;
+}
+
+.color-box-label {
+  display: flex;
+
+  align-items: center;
+}
+
+.color-box-input {
+  margin-right: 10px;
+  height: 17px;
+}
+
+.design-colors .color-div {
+  height: 25px;
+  width: 30px;
+}
+
+/* COLORES DE LAS CAJAS */
+.design-colors .one {
+  background-color: #114e4e;
+}
+
+.design-colors .two {
+  background-color: #438792;
+}
+
+.design-colors .three {
+  background-color: #a2deaf;
+}
+
+.design-colors .four {
+  background-color: #420101;
+}
+
+.design-colors .five {
+  background-color: #bd1010;
+}
+
+.design-colors .six {
+  background-color: #e95626;
+}
+
+.design-colors .seven {
+  background-color: #3e5b65;
+}
+
+.design-colors .eight {
+  background-color: #eab052;
+}
+
+.design-colors .nine {
+  background-color: #a0c0cf;
+}
