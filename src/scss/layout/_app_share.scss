@@ -5,6 +5,7 @@
   color: $font_color_primary;
   font-size: 18px;
   line-height: 20px;
+  padding-top: 30px;
 }
 
 .fa-share-nodes {
@@ -37,7 +38,38 @@
   color: $font_color_primary;
   line-height: 20px;
 }
-
+.fa-angle-down {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  font-size: 20px;
+}
+.contain_share {
+  border-bottom: 1px solid $background_border;
+  margin-left: 30px;
+  margin-right: 30px;
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.create_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+}
+.submit_button {
+  width: 200px;
+}
+.font_success {
+  display: flex;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  gap: 15px;
+  border-bottom: 1px solid $background_border;
+  margin-left: 30px;
+  margin-right: 30px;
+}
 .card_link {
   font-family: $font_main;
   font-weight: 700;
@@ -52,7 +84,7 @@
   color: #fff;
   background-color: #00a0f5;
   text-decoration: none;
-  padding: 8px;
+
   border-radius: 3px;
-  padding: 5px 10px;
+  padding: 8px 10px;
 }

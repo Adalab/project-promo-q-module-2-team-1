@@ -1,0 +1,64 @@
+/*SECCIÓN DEL TÍTULO*/
+
+.data {
+  padding-top: 27px;
+  padding-left: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.data-title {
+  text-transform: uppercase;
+  font-family: $font_main;
+  font-weight: 700;
+  color: $font_color_primary;
+  font-size: 18px;
+}
+
+.fa-keyboard {
+  margin-right: 10px;
+}
+
+/* FORMULARIO */
+
+.data-input-section {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+  margin: 25px 30px;
+  gap: 20px;
+
+  @media all and (min-width: 768px) {
+    max-width: 329px;
+  }
+}
+
+.data-label {
+  font-family: $font_main;
+  color: $font_color_subtitle;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  & .data-input {
+    border: 2px #a2deaf solid;
+    height: 30px;
+  }
+}
+
+.image-input-div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  & .image-input {
+    background-color: $font_color_title;
+    width: 140px;
+    font-family: $font_main;
+    padding: 3px 20px 7px 22px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+}
