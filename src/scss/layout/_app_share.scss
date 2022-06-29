@@ -1,15 +1,6 @@
-.share {
-  text-transform: uppercase;
-  font-family: $font_main;
-  font-weight: 700;
-  color: $font_color_primary;
-  font-size: 18px;
-  line-height: 20px;
-  padding-top: 30px;
-}
-
 .fa-share-nodes {
   color: $font_color_title;
+  margin-right: 10px;
 }
 
 .submit_button {
@@ -38,20 +29,7 @@
   color: $font_color_primary;
   line-height: 20px;
 }
-.fa-angle-down {
-  position: absolute;
-  top: 30px;
-  right: 0;
-  font-size: 20px;
-}
-.contain_share {
-  border-bottom: 1px solid $background_border;
-  margin-left: 30px;
-  margin-right: 30px;
-  position: relative;
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
+
 .create_button {
   display: flex;
   justify-content: center;
@@ -87,4 +65,12 @@
 
   border-radius: 3px;
   padding: 8px 10px;
+}
+
+.collapsed {
+  display: none;
+}
+
+.rotate {
+  transform: rotate(180deg);
 }

@@ -1,69 +1,34 @@
 <fieldset>
-  <section class="data">
+  <!-- <section class="data">
     <h2 class="data-title"><i class="fa-solid fa-keyboard"> </i>rellena</h2>
     <i class="fa-solid fa-angle-up"></i>
-  </section>
-  <section class="data-input-section">
-    <label for="name" class="data-label"
-      >Nombre completo
-      <input
-        type="text"
-        id="name"
-        class="data-input"
-        placeholder="Ej: Sally Jill"
-      />
+  </section> -->
+  <include src="./app_section_title.html" title="rellena" clase="fa-solid fa-keyboard">
+  </include>
+  <section class="data-input-section js_section_data collapsed">
+    <label for="name" class="data-label">Nombre completo
+      <input type="text" id="name" class="data-input" placeholder="Ej: Sally Jill" />
     </label>
-    <label for="job" class="data-label"
-      >Puesto<input
-        type="text"
-        id="job"
-        class="data-input"
-        placeholder="Ej: Front-end unicorn"
-      />
+    <label for="job" class="data-label">Puesto<input type="text" id="job" class="data-input"
+        placeholder="Ej: Front-end unicorn" />
     </label>
-    <label for="profile-pic" class="data-label"
-      >Imagen de perfil
+    <label for="profile-pic" class="data-label">Imagen de perfil
       <div class="image-input-div">
-        <input
-          type="button"
-          id="profile-pic"
-          value="Añadir imagen"
-          class="image-input"
-        />
+        <input type="button" id="profile-pic" value="Añadir imagen" class="image-input" />
         <input type="checkbox" />
       </div>
     </label>
-    <label for="email" class="data-label"
-      >Email<input
-        type="email"
-        id="email"
-        class="data-input"
-        placeholder="Ej: Sally-hill@gmail.com"
-      />
+    <label for="email" class="data-label">Email<input type="email" id="email" class="data-input"
+        placeholder="Ej: Sally-hill@gmail.com" />
     </label>
-    <label for="phone-number" class="data-label"
-      >Teléfono<input
-        type="text"
-        id="phone-number"
-        class="data-input"
-        placeholder="Ej: 555-55-55-55"
-      />
+    <label for="phone-number" class="data-label">Teléfono<input type="text" id="phone-number" class="data-input"
+        placeholder="Ej: 555-55-55-55" />
     </label>
-    <label for="linkedin" class="data-label"
-      >Linkedin<input
-        type="text"
-        id="linkedin"
-        class="data-input"
-        placeholder="Ej: linkedin.com/in/sally.hill"
-      />
+    <label for="linkedin" class="data-label">Linkedin<input type="text" id="linkedin" class="data-input"
+        placeholder="Ej: linkedin.com/in/sally.hill" />
     </label>
-    <label for="github" class="data-label"
-      >Github<input
-        type="text"
-        id="github"
-        class="data-input"
-        placeholder="Ej:@sally-hill"
-      />
+    <label for="github" class="data-label">Github<input type="text" id="github" class="data-input"
+        placeholder="Ej:@sally-hill" />
     </label>
   </section>
 </fieldset>
