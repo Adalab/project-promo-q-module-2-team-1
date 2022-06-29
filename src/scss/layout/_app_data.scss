@@ -54,14 +54,22 @@
   align-items: center;
   gap: 20px;
 
-  & .image-input {
+  & .image-input-label {
     background-color: $font_color_title;
+    height: 30px;
     width: 140px;
+    font-size: 14px;
+    line-height: 20px;
     font-family: $font_main;
-    padding: 3px 20px 7px 22px;
+    padding: 3px 22px 7px;
     color: white;
     border: none;
     border-radius: 5px;
+    text-align: center;
+
+    & .image-input {
+      display: none;
+    }
   }
   & .image_preview {
     width: 30px;
