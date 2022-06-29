@@ -1,8 +1,8 @@
 .main-container {
-    height: 85vh;
-    background-color: $background_primary;
+    height: 81vh;
+    background-color: $background_index;
     @media all and (min-width: 768px) {
-        height: 90vh;
+        height: 87vh;
      }
 }
 .main {
@@ -11,61 +11,64 @@
     justify-content: flex-start;
     align-items: center;
     text-align: center;
-    padding-top: 8vh;
+    padding-top: 1vh;
     height: 45vh;
     @media all and (min-width: 768px) {
-        padding-top: 3.5vh;
+        padding-top: 0.5vh;
      }
     &__title {
-        color: $font_color_title;
+        color: $pink;
         font-family: $font_title;
         font-size: 19.2px;
         margin-bottom: 5px;
         width: 70%;
         @media all and (min-width: 768px) {
-            font-size: 24px;
-            width: 36.20%;
+            font-size: 2.6rem;
+            width: 38%;
          }
     }
     &__text {
-        color: $font_color_subtitle;
+        color: $color_neutro;
         font-family: $font_main;
-        font-size: 12.8px;
+        font-size: 1.4rem;
         padding-bottom: 4%;
         width: 70vw;
         @media all and (min-width: 768px) {
             width: 43%;
-            font-size: 16px;
+            font-size: 1.8rem;
             line-height: 22px;
         }
     }
     &__icons {
-        width: 75vw;
-        height: 73.8px;
+        width: 65vw;
+        height: 60px;
         display: flex;
         justify-content: space-around;
+        align-items: center;
+        font-size: 2.4rem;
+        font-weight: bold;
         padding: 15px 20px 10px 20px;
-        border: 1.6px solid rgba(225, 115, 52, 0.21);
-        border-radius: 5px;
+        border: 1.6px solid rgba(233, 27, 206, 0.21);
+        border-radius: 15px;
         @media all and (min-width: 768px) {
             width: 43vw;
             height: 86px;
-            border: 2px solid rgba(225, 115, 52, 0.21);
+            border: 2px solid rgba(233, 27, 206, 0.21);
         }
         &--text {
             font-family: $font_main;
-            font-size: 12.8px;
-            color: $font_color_primary;
+            font-size: 1.28rem;
+            color: $color_neutro;
             @media all and (min-width: 768px) {
-                font-size: 16px;
+                font-size: 1.8rem;
             }
         }
     }
     &__link {
-        background-color: $background_link;
+        background-color: $pink;
         text-transform: uppercase;
         font-family: $font_main;
-        font-size: 16px;
+        font-size: 1.6rem;
         font-weight: 600;
         border-radius: 21px;
         padding: 10px 20px 10px 20px;
@@ -73,11 +76,11 @@
         margin-bottom: 7vh;
         
         @media all and (min-width: 768px) {
-            margin-top: 13vh;
+            margin-top: 10vh;
             margin-bottom: 5vh;
         }
         @media all and (min-width: 1024px) {
-            margin-top: 12vh;
+            margin-top: 3vh;
             margin-bottom: 3.5vh;
 
         }
@@ -89,9 +92,10 @@
 }
 
 .main__icons i {
-    color: $font_color_title;
-    font-size: 22.4px;
+    color: $pink;
+    font-size: 2.4rem;
+    padding-bottom: 7px;
     @media all and (min-width: 768px) {
-        font-size: 28px;
+        font-size: 2.8rem;
     }
 }

@@ -4,20 +4,20 @@
   padding-top: 27px;
   display: flex;
   justify-content: space-between;
-  border-bottom: solid 1px $background_border;
+  border-bottom: solid 1px $color_blue;
   padding-bottom: 7px;
 }
 
 .fa-object-ungroup {
   margin-right: 10px;
-  color: $font_color_title;
-  font-size: 18px;
+  color: $pink;
+  font-size: 1.8rem;
 }
 
 .fa-angle-up {
   margin-right: 20px;
-  color: $font_color_title;
-  font-size: 18px;
+  color: $pink;
+  font-size: 1.8rem;
 }
 
 .section-form-title {
@@ -25,7 +25,7 @@
   font-family: $font_main;
   font-weight: 700;
   color: $font_color_primary;
-  font-size: 18px;
+  font-size: 1.8rem;
 }
 
 /*SELECCIÓN DE COLORES*/
@@ -45,8 +45,8 @@
 .design-colors .colors-title {
   text-transform: uppercase;
   font-family: $font_main;
-  font-size: 14px;
-  color: $font_color_primary;
+  font-size: 1.4rem;
+  color: $color_blue;
 }
 
 .color-box-label {
@@ -100,4 +100,28 @@
 
 .design-colors .nine {
   background-color: #a0c0cf;
+}
+
+.design-colors .ten {
+  background-color: #b0008a;
+}
+
+.design-colors .eleven {
+  background-color: #b169c5;
+}
+
+.design-colors .twelve {
+  background-color: #0b8dc9;
+}
+
+.design-colors .thirteen {
+  background-color: #21d0bb;
+}
+
+.design-colors .fourteen {
+  background-color: #f637dd;
+}
+
+.design-colors .fifteen {
+  background-color: #ffef3c;
 }

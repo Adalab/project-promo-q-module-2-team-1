@@ -2,7 +2,7 @@
 .section-preview{
     
     padding: 38px 35px 40px 45px;
-    background-image: linear-gradient(to bottom, $preview_color_one, $preview_color_two);
+    background-image: linear-gradient(to bottom, $blue, pink);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,11 +18,13 @@
         width: 94px;
         height: 36px;
         border-radius: 20px;
-        border: solid 1px $background_secondary;
-        background-color: $preview_color_one;
+        border: solid 1px $color_pink;
+        background-color: $background_index;
         text-transform: uppercase;
-        color: $font_color_primary;
+        color: $color_pink;
         grid-column: 1 / 2;
+        font-weight: bold;
+        font-size: 1.4rem;
 
         .icon-button{
             margin-right: 6px;
@@ -40,22 +42,22 @@
 
         .preview-container-title{
             padding-left: 20px;
-            border-left: 5px solid #438792;
+            border-left: 5px solid $color_title_button;
 
             .preview-name{
-                font-size: 18px;
+                font-size: 1.8rem;
                 font-weight: bold;
                 line-height: 1.15;
                 margin-bottom: 5px;
                 text-transform: capitalize;
-                color: $font_color_subtitle;
+                color: $color_neutro;
             }
 
             .preview-job{
-                font-size: 16px;
+                font-size: 1.6rem;
                 line-height: 1.25;
                 font-weight: 500;
-                color: $font_color_primary;
+                color: $color_pink;
                 &::first-letter{
                     text-transform: uppercase
                     ;
@@ -64,7 +66,7 @@
         }
 
         .preview-img{
-            background-color: aqua;
+            background-image: linear-gradient(to bottom, $color_title_button, $background_index);
             width: 240px;
             height: 200px;
             margin: 10px 0;
@@ -74,13 +76,13 @@
             text-align: center;
 
             .link-preview-icon{
-                color: $font_color_subtitle;
+                color: $color_neutro;
 
                 .preview-icon{
                     margin: 0 10px 0 0;
                     padding: 8px 8px;
                     border-radius: 50px;
-                    border: solid 2px #A2DEAF;
+                    border: solid 2px $blue;
                 }
                 
                 .mobile-preview-icon{

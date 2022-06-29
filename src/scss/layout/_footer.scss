@@ -3,11 +3,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-top: solid 1px;
+  border-top: solid 1px $color_blue;
   border-color: $background_border;
   font-family: $font_main;
   height: 15vh;
   padding-bottom: 20px;
+  padding-top: 10px;
   @media all and (min-width: 768px) {
     height: 10vh;
     flex-direction: row;
@@ -15,7 +16,7 @@
     align-items: center;
   }
   &__text {
-    font-size: 14px;
+    font-size: 1.6rem;
     line-height: 20px;
     color: $background_border;
     text-align: center;
@@ -24,15 +25,20 @@
     text-transform: capitalize;
     @media all and (min-width: 768px) {
       padding: 18px 0 22px 41px;
+      font-size: 2rem;
+      text-align: left;
     }
   }
   &__logo {
+    padding-bottom: 10px;
     @media all and (min-width: 768px) {
-      padding: 10px 40px 10px;
+      padding: 0px 40px 10px;
+      
     }
     &--img {
-      width: 103px;
-      height: 40px;
+      width: 220px;
+      height: 90px;
+      
     }
   }
 }

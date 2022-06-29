@@ -11,14 +11,14 @@
   text-transform: uppercase;
   font-family: $font_main;
   font-weight: 700;
-  color: $font_color_primary;
-  font-size: 18px;
+  color: $color_neutro;
+  font-size: 1.8rem;
 }
 
 .fa-keyboard {
   margin-right: 10px;
-  color: $font_color_title;
-  font-size: 18px;
+  color: $pink;
+  font-size: 1.8rem;
 }
 
 /* FORMULARIO */
@@ -37,15 +37,16 @@
 
 .data-label {
   font-family: $font_main;
-  color: $font_color_subtitle;
-  font-size: 14px;
+  color: $color_blue;
+  font-size: 1.6rem;
   display: flex;
   flex-direction: column;
   gap: 7px;
 
   & .data-input {
-    border: 2px #a2deaf solid;
+    border: 2px $color_pink solid;
     height: 30px;
+    border-radius: 15px;
   }
 }
 
@@ -55,7 +56,7 @@
   gap: 20px;
 
   & .image-input {
-    background-color: $font_color_title;
+    background-color: $blue;
     width: 140px;
     font-family: $font_main;
     padding: 3px 20px 7px 22px;
@@ -66,6 +67,6 @@
   & .image_preview {
     width: 30px;
     height: 30px;
-    border: 2px #a2deaf solid;
+    border: 2px $color_pink solid;
   }
 }
