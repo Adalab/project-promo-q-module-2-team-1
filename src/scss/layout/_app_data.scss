@@ -12,13 +12,13 @@
   font-family: $font_main;
   font-weight: 700;
   color: $color_neutro;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
 }
 
 .fa-keyboard {
   margin-right: 10px;
   color: $pink;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
 }
 
 /* FORMULARIO */
@@ -33,12 +33,17 @@
   @media all and (min-width: 768px) {
     max-width: 329px;
   }
+  @media all and (min-width: 1024px) {
+    gap: 10px;
+    margin: 15px 30px;
+    padding-bottom: 0px;
+  }
 }
 
 .data-label {
   font-family: $font_main;
   color: $color_blue;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   display: flex;
   flex-direction: column;
   gap: 7px;
@@ -47,6 +52,9 @@
     border: 2px $color_pink solid;
     height: 30px;
     border-radius: 15px;
+    @media all and (min-width: 1024px) {
+      height: 25px;
+    }
   }
 }
 
