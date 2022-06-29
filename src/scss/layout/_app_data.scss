@@ -63,4 +63,9 @@
     border: none;
     border-radius: 5px;
   }
+  & .image_preview {
+    width: 30px;
+    height: 30px;
+    border: 2px #a2deaf solid;
+  }
 }
