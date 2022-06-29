@@ -1,10 +1,11 @@
 /*SECCIÓN DEL TÍTULO*/
 
-.design {
+.section-form {
   padding-top: 27px;
-  padding-left: 20px;
   display: flex;
   justify-content: space-between;
+  border-bottom: solid 1px $background_border;
+  padding-bottom: 7px;
 }
 
 .fa-object-ungroup {
@@ -19,7 +20,7 @@
   font-size: 18px;
 }
 
-.design-title {
+.section-form-title {
   text-transform: uppercase;
   font-family: $font_main;
   font-weight: 700;

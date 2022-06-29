@@ -1,33 +1,31 @@
 .header-app {
-    width: 100vw;
-    height: 11vh;
-    display: flex;
-    align-items: center;
-    margin-left: 12.5vw;
-    &__logo {
-        width: 201px;
-        height: 50px;
-        margin: 10px;
-    }
+  width: 100vw;
+  height: 11vh;
+  display: flex;
+  align-items: center;
+  &__logo {
+    width: 201px;
+    height: 50px;
+    margin: 10px;
+  }
 }
 .header {
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 21vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 21vh;
+  @media all and (min-width: 768px) {
+    padding-top: 36vh;
+  }
+  @media all and (min-width: 1024px) {
+    padding-top: 30vh;
+  }
+  &__logo {
+    width: 250px;
+    height: 63px;
     @media all and (min-width: 768px) {
-        padding-top: 36vh;
-        }
-    @media all and (min-width: 1024px) {
-            padding-top: 30vh;
-            }
-    &__logo {
-        width: 250px;
-        height: 63px;
-        @media all and (min-width: 768px) {
-        width: 419px;
-        height: 105px;
-        }
+      width: 419px;
+      height: 105px;
     }
+  }
 }
