@@ -43,17 +43,45 @@ const handleClick = (ev) => {
 designHeader.addEventListener('click', handleClick);
 dataHeader.addEventListener('click', handleClick);
 shareHeader.addEventListener('click', handleClick);
-/*
-
-function handleClickSectionDesign (event) {
-    event.preventDefault();
 
 
-sectionFormDesign.addEventListener('click', handleClickSectionDesign);
+//parte link
+const submitButton = document.querySelector('.js_submit_button');
+const linkCard = document.querySelector('.js_link_card');
+
+const handleClickSubmit = (ev) => {
+  ev.preventDefault();
+
+  linkCard.classList.remove('collapsed');
+
+
+};
+submitButton.addEventListener('click', handleClickSubmit);
+
 
 //parte imagen
+
 
 const fr = new FileReader();
 const fileField = document.querySelector('.js__profile-upload-btn');
 const profileImage = document.querySelector('.js__profile-image');
-const profilePreview = document.querySelector('.js__profile-preview');*/
+const profilePreview = document.querySelector('.js__profile-preview');
+
+
+//@param { evento } e
+
+function getImage (e) {
+  const myFile = e.currentTarget.files[0];
+  fr.addEventListener('load', writeImage);
+  fr.readAsDataURL(myFile);
+}
+
+
+function writeImage () {
+
+  profileImage.style.backgroundImage = `url(${fr.result})`;
+  profilePreview.style.backgroundImage = `url(${fr.result})`;
+}
+
+
+fileField.addEventListener('change', getImage);

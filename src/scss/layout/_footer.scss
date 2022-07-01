@@ -6,10 +6,8 @@
   border-top: solid 1px;
   border-color: $background_border;
   font-family: $font_main;
-  height: 15vh;
   padding-bottom: 20px;
   @media all and (min-width: 768px) {
-    height: 10vh;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
