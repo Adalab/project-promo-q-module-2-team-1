@@ -304,7 +304,7 @@ const previewContainerPalette3 = () => {
   previewContainer.classList.add('container-blue-preview');
 };
 
-palette.addEventListener ('click', (event) =>{
+palette.addEventListener ('click', () =>{
   if (palette1.checked){
     previewNamePalette1();
     previewJobPalette1();
