@@ -85,3 +85,71 @@ function writeImage () {
 
 
 fileField.addEventListener('change', getImage);
+
+//formulario
+
+const allInputs = document.querySelector('.js_all_inputs');
+const previewName = document.querySelector('.js_preview_name');
+const previewJob = document.querySelector('.js_preview_job');
+const previewEmail  = document.querySelector('.js_preview_email');
+const previewPhone = document.querySelector('.js_preview_phone');
+const previewLinkedin = document.querySelector('.js_preview_linkedin');
+const previewGithub = document.querySelector('.js_preview_github');
+
+const data = {
+  palette: 1,
+  name: '',
+  job: '',
+  email: '',
+  phone: '',
+  linkedin: '',
+  github: '',
+
+};
+
+const previewCard= ()=>{
+
+  if (data.name !== ''){
+    previewName.innerHTML = data.name;
+  } else (previewName.innerHTML = 'Nombre Apellido');
+
+  if (data.job !== ''){
+    previewJob.innerHTML = data.job;
+  }
+  else (previewJob.innerHTML = 'Front-end developer');
+
+  previewEmail.href = data.email;
+  previewPhone.href = data.phone;
+  previewLinkedin.href = data.linkedin;
+  previewGithub.href = data.github;
+};
+
+const handleInput = (ev) => {
+  const nameInput = ev.target.name;
+  const valueInput = ev.target.value;
+  data [nameInput] = valueInput;
+  console.log (data.name);
+  previewCard ();
+
+};
+
+allInputs.addEventListener ('keyup', handleInput); //change
+
+//palette
+const palette = document.querySelector('.js_palette');
+const palette1 = document.querySelector('.js_palette1');
+const palette2 = document.querySelector('.js_palette2');
+const palette3 = document.querySelector('.js_palette3');
+
+
+/*
+
+palette.addEventListener ('focus', (event) =>{
+  if (palette2.checked === true){
+    previewName.classList.add('red-preview');
+    console.log('Hola');
+  } else if (palette3.checked === true){
+    previewName.classList.add('blue-preview');
+  }
+});
+*/
