@@ -129,11 +129,17 @@ const handleInput = (ev) => {
 allInputs.addEventListener('keyup', handleInput); //change
 
 //palette
+const palette = document.querySelector('.js_palette');
 const palette1 = document.querySelector('.js_palette1');
 const palette2 = document.querySelector('.js_palette2');
 const palette3 = document.querySelector('.js_palette3');
+const previewIconPhone = document.querySelector('.js_preview_icon_phone');
+const previewIconEmail = document.querySelector('.js_preview_icon_email');
+const previewIconLinkedin = document.querySelector('.js_preview_icon_linkedin');
+const previewIconGithub = document.querySelector('.js_preview_icon_github');
+const previewContainer = document.querySelector('.js_preview_container');
 
-palette1.addEventListener('click', () => {
+/*palette1.addEventListener('click', () => {
   previewName.classList.remove('red-preview');
   previewName.classList.remove('blue-preview');
   previewName.classList.add('default-preview');
@@ -149,13 +155,170 @@ palette3.addEventListener('click', () => {
   previewName.classList.remove('red-preview');
   previewName.classList.remove('default-preview');
   previewName.classList.add('blue-preview');
-});
+});*/
 
-// palette.addEventListener ('focus', (event) =>{
-// if (palette2.checked){
-// previewName.classList.add('red-preview');
-// console.log('Hola');
-// } else if (palette3.checked === true){
-// previewName.classList.add('blue-preview');
-// }
-// });
+const previewNamePalette1 = () => {
+  previewName.classList.remove('name-red-preview');
+  previewName.classList.remove('name-blue-preview');
+  previewName.classList.add('name-default-preview');
+};
+
+const previewNamePalette2 = () => {
+  previewName.classList.remove('name-blue-preview');
+  previewName.classList.remove('name-default-preview');
+  previewName.classList.add('name-red-preview');
+};
+
+const previewNamePalette3 = () => {
+  previewName.classList.remove('name-red-preview');
+  previewName.classList.remove('name-default-preview');
+  previewName.classList.add('name-blue-preview');
+};
+
+const previewJobPalette1 = () => {
+  previewJob.classList.remove('job-red-preview');
+  previewJob.classList.remove('job-blue-preview');
+  previewJob.classList.add('job-default-preview');
+};
+
+const previewJobPalette2 = () => {
+  previewJob.classList.remove('job-blue-preview');
+  previewJob.classList.remove('job-default-preview');
+  previewJob.classList.add('job-red-preview');
+};
+
+const previewJobPalette3 = () => {
+  previewJob.classList.remove('job-red-preview');
+  previewJob.classList.remove('job-default-preview');
+  previewJob.classList.add('job-blue-preview');
+};
+
+const previewIconPhone1 = () => {
+  previewIconPhone.classList.remove('icons-red-preview');
+  previewIconPhone.classList.remove('icons-blue-preview');
+  previewIconPhone.classList.add('icons-default-preview');
+};
+
+const previewIconEmail1 =() => {
+  previewIconEmail.classList.remove('icons-red-preview');
+  previewIconEmail.classList.remove('icons-blue-preview');
+  previewIconEmail.classList.add('icons-default-preview');
+};
+
+const previewIconLinkedin1 =() => {
+  previewIconLinkedin.classList.remove('icons-red-preview');
+  previewIconLinkedin.classList.remove('icons-blue-preview');
+  previewIconLinkedin.classList.add('icons-default-preview');
+};
+
+const previewIconGithub1 =() => {
+  previewIconGithub.classList.remove('icons-red-preview');
+  previewIconGithub.classList.remove('icons-blue-preview');
+  previewIconGithub.classList.add('icons-default-preview');
+};
+
+const previewIconPhone2 = () => {
+  previewIconPhone.classList.remove('icons-blue-preview');
+  previewIconPhone.classList.remove('icons-default-preview');
+  previewIconPhone.classList.add('icons-red-preview');
+};
+
+const previewIconEmail2 = () => {
+  previewIconEmail.classList.remove('icons-blue-preview');
+  previewIconEmail.classList.remove('icons-default-preview');
+  previewIconEmail.classList.add('icons-red-preview');
+};
+
+const previewIconLinkedin2 = () => {
+  previewIconLinkedin.classList.remove('icons-blue-preview');
+  previewIconLinkedin.classList.remove('icons-default-preview');
+  previewIconLinkedin.classList.add('icons-red-preview');
+};
+
+const previewIconGithub2 = () => {
+  previewIconGithub.classList.remove('icons-blue-preview');
+  previewIconGithub.classList.remove('icons-default-preview');
+  previewIconGithub.classList.add('icons-red-preview');
+};
+
+const previewIconPhone3 = () => {
+  previewIconPhone.classList.remove('icons-red-preview');
+  previewIconPhone.classList.remove('icons-default-preview');
+  previewIconPhone.classList.add('icons-blue-preview');
+};
+
+const previewIconEmail3 = () => {
+  previewIconEmail.classList.remove('icons-red-preview');
+  previewIconEmail.classList.remove('icons-default-preview');
+  previewIconEmail.classList.add('icons-blue-preview');
+};
+
+const previewIconLinkedin3 = () => {
+  previewIconLinkedin.classList.remove('icons-red-preview');
+  previewIconLinkedin.classList.remove('icons-default-preview');
+  previewIconLinkedin.classList.add('icons-blue-preview');
+};
+
+const previewIconGithub3 = () => {
+  previewIconGithub.classList.remove('icons-red-preview');
+  previewIconGithub.classList.remove('icons-default-preview');
+  previewIconGithub.classList.add('icons-blue-preview');
+};
+
+const previewIconPalette1 = () => {
+  previewIconPhone1();
+  previewIconEmail1();
+  previewIconLinkedin1();
+  previewIconGithub1();
+};
+
+const previewIconPalette2 = () => {
+  previewIconPhone2();
+  previewIconEmail2();
+  previewIconLinkedin2();
+  previewIconGithub2();
+};
+
+const previewIconPalette3 = () => {
+  previewIconPhone3();
+  previewIconEmail3();
+  previewIconLinkedin3();
+  previewIconGithub3();
+};
+
+const previewContainerPalette1 = () => {
+  previewContainer.classList.remove('container-red-preview');
+  previewContainer.classList.remove('container-blue-preview');
+  previewContainer.classList.add('container-default-preview');
+};
+
+const previewContainerPalette2 = () => {
+  previewContainer.classList.remove('container-blue-preview');
+  previewContainer.classList.remove('container-default-preview');
+  previewContainer.classList.add('container-red-preview');
+};
+
+const previewContainerPalette3 = () => {
+  previewContainer.classList.remove('container-red-preview');
+  previewContainer.classList.remove('container-default-preview');
+  previewContainer.classList.add('container-blue-preview');
+};
+
+palette.addEventListener ('click', (event) =>{
+  if (palette1.checked){
+    previewNamePalette1();
+    previewJobPalette1();
+    previewIconPalette1();
+    previewContainerPalette1();
+  } else if (palette2.checked){
+    previewNamePalette2();
+    previewJobPalette2();
+    previewIconPalette2();
+    previewContainerPalette2();
+  } else if (palette3.checked){
+    previewNamePalette3();
+    previewJobPalette3();
+    previewIconPalette3();
+    previewContainerPalette3();
+  }
+});

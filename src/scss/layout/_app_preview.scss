@@ -42,7 +42,7 @@
 
     .preview-container-title {
       padding-left: 20px;
-      border-left: 5px solid #438792;
+      //border-left: 5px solid #438792;
 
       .preview-name {
         font-size: 18px;
@@ -57,7 +57,7 @@
         font-size: 16px;
         line-height: 1.25;
         font-weight: 500;
-        color: $font_color_primary;
+        //color: $font_color_primary;
         &::first-letter {
           text-transform: uppercase;
         }
@@ -82,22 +82,23 @@
                 
             }
 
-      .link-preview-icon {
-        color: $font_color_subtitle;
+      //.link-preview-icon {
+        //color: $font_color_subtitle;
 
         .preview-icon {
           margin: 0 10px 0 0;
           padding: 8px 8px;
           border-radius: 50px;
-          border: solid 2px #a2deaf;
+          //border: solid 2px;
         }
 
         .mobile-preview-icon {
           padding: 8px 10px;
+          margin-left: 20px;
         }
       }
     }
-  }
+  //}
 
 .container-preview-button {
     display: grid;
@@ -105,14 +106,55 @@
     padding-left: 35px;
 }
 
-.default-preview {
-    color: $font_color_subtitle;
+.name-default-preview {
+  color: $font_color_subtitle;
+  
 }
 
-.red-preview {
-    color: #420101;
+.name-red-preview {
+  color: #420101;
 }
-  
-.blue-preview {
-    color: #3e5b65;
+
+.name-blue-preview {
+  color: #3e5b65;
+}
+
+.job-default-preview {
+color: #438792;
+;
+}
+
+.job-red-preview {
+color: #bd1010;
+}
+
+.job-blue-preview {
+color: #eab052;
+}
+
+.icons-default-preview {
+border: solid 2px #a2deaf;
+color: $font_color_subtitle;
+}
+
+.icons-red-preview {
+border: solid 2px #e95626;
+color: #420101;
+}
+
+.icons-blue-preview {
+border: solid 2px #a0c0cf;
+color: #3e5b65;
+}
+
+.container-default-preview {
+  border-left: 5px solid #438792;
+}
+
+.container-red-preview {
+  border-left: 5px solid #bd1010;
+}
+
+.container-blue-preview {
+  border-left: 5px solid #eab052;
 }
