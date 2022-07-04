@@ -73,8 +73,14 @@
       margin: 10px 0;
     }
 
-    .preview-icon-contact {
-      text-align: center;
+            .preview-name{
+                font-size: 18px;
+                font-weight: bold;
+                line-height: 1.15;
+                margin-bottom: 5px;
+                text-transform: capitalize;
+                
+            }
 
       .link-preview-icon {
         color: $font_color_subtitle;
@@ -94,7 +100,19 @@
   }
 }
 .container-preview-button {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  padding-left: 35px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-left: 35px;
+}
+
+.default-preview {
+    color: $font_color_subtitle;
+}
+
+.red-preview {
+    color: #420101;
+}
+  
+.blue-preview {
+    color: #3e5b65;
 }
