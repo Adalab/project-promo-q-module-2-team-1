@@ -102,11 +102,15 @@ const data = {
 const previewCard = () => {
   if (data.name !== '') {
     previewName.innerHTML = data.name;
-  } else previewName.innerHTML = 'Nombre Apellido';
+  } else {
+    previewName.innerHTML = 'Nombre Apellido';
+  }
 
   if (data.job !== '') {
     previewJob.innerHTML = data.job;
-  } else previewJob.innerHTML = 'Front-end developer';
+  } else {
+    previewJob.innerHTML = 'Front-end developer';
+  }
 
   previewEmail.href = data.email;
   previewPhone.href = data.phone;
@@ -125,24 +129,23 @@ const handleInput = (ev) => {
 allInputs.addEventListener('keyup', handleInput); //change
 
 //palette
-const palette = document.querySelector('.js_palette');
 const palette1 = document.querySelector('.js_palette1');
 const palette2 = document.querySelector('.js_palette2');
 const palette3 = document.querySelector('.js_palette3');
 
-palette1.addEventListener('click', (event) => {
+palette1.addEventListener('click', () => {
   previewName.classList.remove('red-preview');
   previewName.classList.remove('blue-preview');
   previewName.classList.add('default-preview');
 });
 
-palette2.addEventListener('click', (event) => {
+palette2.addEventListener('click', () => {
   previewName.classList.remove('blue-preview');
   previewName.classList.remove('default-preview');
   previewName.classList.add('red-preview');
 });
 
-palette3.addEventListener('click', (event) => {
+palette3.addEventListener('click', () => {
   previewName.classList.remove('red-preview');
   previewName.classList.remove('default-preview');
   previewName.classList.add('blue-preview');
