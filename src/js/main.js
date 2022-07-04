@@ -131,21 +131,18 @@ const palette2 = document.querySelector('.js_palette2');
 const palette3 = document.querySelector('.js_palette3');
 
 palette1.addEventListener('click', (event) => {
-  console.log('LaLOLO');
   previewName.classList.remove('red-preview');
   previewName.classList.remove('blue-preview');
   previewName.classList.add('default-preview');
 });
 
 palette2.addEventListener('click', (event) => {
-  console.log('LOLOLO');
   previewName.classList.remove('blue-preview');
   previewName.classList.remove('default-preview');
   previewName.classList.add('red-preview');
 });
 
 palette3.addEventListener('click', (event) => {
-  console.log('LuLOLO');
   previewName.classList.remove('red-preview');
   previewName.classList.remove('default-preview');
   previewName.classList.add('blue-preview');
