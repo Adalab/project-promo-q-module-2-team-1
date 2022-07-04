@@ -133,20 +133,29 @@ const palette1 = document.querySelector('.js_palette1');
 const palette2 = document.querySelector('.js_palette2');
 const palette3 = document.querySelector('.js_palette3');
 
-palette.addEventListener ('click', () =>{
-  if (palette1.checked){
-    previewName.classList.add('default-preview');
-    previewName.classList.remove('red-preview');
-    previewName.classList.remove('blue-preview');
-    console.log('Hola');
-  } else if (palette2.checked){
-    previewName.classList.add('red-preview');
-    previewName.classList.remove('default-preview');
-    previewName.classList.remove('blue-preview');
-  } else if (palette3.checked){
-    previewName.classList.add('blue-preview');
-    previewName.classList.remove('default-preview');
-    previewName.classList.remove('red-preview');
-  }
+palette1.addEventListener('click', () => {
+  previewName.classList.remove('red-preview');
+  previewName.classList.remove('blue-preview');
+  previewName.classList.add('default-preview');
 });
 
+palette2.addEventListener('click', () => {
+  previewName.classList.remove('blue-preview');
+  previewName.classList.remove('default-preview');
+  previewName.classList.add('red-preview');
+});
+
+palette3.addEventListener('click', () => {
+  previewName.classList.remove('red-preview');
+  previewName.classList.remove('default-preview');
+  previewName.classList.add('blue-preview');
+});
+
+// palette.addEventListener ('focus', (event) =>{
+// if (palette2.checked){
+// previewName.classList.add('red-preview');
+// console.log('Hola');
+// } else if (palette3.checked === true){
+// previewName.classList.add('blue-preview');
+// }
+// });
