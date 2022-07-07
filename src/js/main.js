@@ -93,6 +93,7 @@ const data = {
   palette: 1,
   name: '',
   job: '',
+  image: '',
   email: '',
   phone: '',
   linkedin: '',
@@ -139,24 +140,6 @@ const previewIconLinkedin = document.querySelector('.js_preview_icon_linkedin');
 const previewIconGithub = document.querySelector('.js_preview_icon_github');
 const previewContainer = document.querySelector('.js_preview_container');
 
-/*palette1.addEventListener('click', () => {
-  previewName.classList.remove('red-preview');
-  previewName.classList.remove('blue-preview');
-  previewName.classList.add('default-preview');
-});
-
-palette2.addEventListener('click', () => {
-  previewName.classList.remove('blue-preview');
-  previewName.classList.remove('default-preview');
-  previewName.classList.add('red-preview');
-});
-
-palette3.addEventListener('click', () => {
-  previewName.classList.remove('red-preview');
-  previewName.classList.remove('default-preview');
-  previewName.classList.add('blue-preview');
-});*/
-
 const previewNamePalette1 = () => {
   previewName.classList.remove('name-red-preview');
   previewName.classList.remove('name-blue-preview');
@@ -199,19 +182,19 @@ const previewIconPhone1 = () => {
   previewIconPhone.classList.add('icons-default-preview');
 };
 
-const previewIconEmail1 =() => {
+const previewIconEmail1 = () => {
   previewIconEmail.classList.remove('icons-red-preview');
   previewIconEmail.classList.remove('icons-blue-preview');
   previewIconEmail.classList.add('icons-default-preview');
 };
 
-const previewIconLinkedin1 =() => {
+const previewIconLinkedin1 = () => {
   previewIconLinkedin.classList.remove('icons-red-preview');
   previewIconLinkedin.classList.remove('icons-blue-preview');
   previewIconLinkedin.classList.add('icons-default-preview');
 };
 
-const previewIconGithub1 =() => {
+const previewIconGithub1 = () => {
   previewIconGithub.classList.remove('icons-red-preview');
   previewIconGithub.classList.remove('icons-blue-preview');
   previewIconGithub.classList.add('icons-default-preview');
@@ -304,21 +287,47 @@ const previewContainerPalette3 = () => {
   previewContainer.classList.add('container-blue-preview');
 };
 
-palette.addEventListener ('click', () =>{
-  if (palette1.checked){
+palette.addEventListener('click', () => {
+  if (palette1.checked) {
     previewNamePalette1();
     previewJobPalette1();
     previewIconPalette1();
     previewContainerPalette1();
-  } else if (palette2.checked){
+  } else if (palette2.checked) {
     previewNamePalette2();
     previewJobPalette2();
     previewIconPalette2();
     previewContainerPalette2();
-  } else if (palette3.checked){
+  } else if (palette3.checked) {
     previewNamePalette3();
     previewJobPalette3();
     previewIconPalette3();
     previewContainerPalette3();
   }
 });
+
+//Reset button
+
+const resetButton = document.querySelector('.js_reset_button');
+
+
+
+resetButton.addEventListener('click', handleClickReset);
+
+function handleClickReset(ev) {
+  ev.preventDefault();
+  allInputs.reset();
+
+
+  previewName.innerHTML = `Nombre apellido`;
+  previewJob.innerHTML = `Front-end developer`;
+  previewEmail.value = ``;
+  previewGithub.value = ``;
+  previewLinkedin.value = ``;
+  previewPhone.value = ``;
+  // fileField.src = ``;
+  // profileImage.src = ``;
+  // profilePreview.src = ``
+}
+
+

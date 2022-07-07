@@ -4,7 +4,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
-    height: 90vh;
   }
   @media all and (min-width: 1024px) {
     grid-template-columns: 0.75fr 1.25fr;
@@ -16,4 +15,3 @@
   margin-left: 30px;
   margin-right: 30px;
 }
-

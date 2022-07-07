@@ -73,42 +73,44 @@
       margin: 10px 0;
     }
 
-            .preview-name{
-                font-size: 18px;
-                font-weight: bold;
-                line-height: 1.15;
-                margin-bottom: 5px;
-                text-transform: capitalize;
-                
-            }
-
-      //.link-preview-icon {
-        //color: $font_color_subtitle;
-
-        .preview-icon {
-          margin: 0 10px 0 0;
-          padding: 8px 8px;
-          border-radius: 50px;
-          //border: solid 2px;
-        }
-
-        .mobile-preview-icon {
-          padding: 8px 10px;
-          margin-left: 20px;
-        }
-      }
+    .preview-name {
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 1.15;
+      margin-bottom: 5px;
+      text-transform: capitalize;
     }
-  //}
+
+    //.link-preview-icon {
+    //color: $font_color_subtitle;
+
+    .preview-icon {
+      margin: 0 10px 0 0;
+      padding: 8px 8px;
+      border-radius: 50px;
+      //border: solid 2px;
+    }
+
+    .mobile-preview-icon {
+      padding: 8px 10px;
+      margin-left: 20px;
+    }
+  }
+}
+//}
 
 .container-preview-button {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    padding-left: 35px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-left: 35px;
+
+  :hover {
+    cursor: pointer;
+  }
 }
 
 .name-default-preview {
   color: $font_color_subtitle;
-  
 }
 
 .name-red-preview {
@@ -120,31 +122,30 @@
 }
 
 .job-default-preview {
-color: #438792;
-;
+  color: #438792;
 }
 
 .job-red-preview {
-color: #bd1010;
+  color: #bd1010;
 }
 
 .job-blue-preview {
-color: #eab052;
+  color: #eab052;
 }
 
 .icons-default-preview {
-border: solid 2px #a2deaf;
-color: $font_color_subtitle;
+  border: solid 2px #a2deaf;
+  color: $font_color_subtitle;
 }
 
 .icons-red-preview {
-border: solid 2px #e95626;
-color: #420101;
+  border: solid 2px #e95626;
+  color: #420101;
 }
 
 .icons-blue-preview {
-border: solid 2px #a0c0cf;
-color: #3e5b65;
+  border: solid 2px #a0c0cf;
+  color: #3e5b65;
 }
 
 .container-default-preview {
