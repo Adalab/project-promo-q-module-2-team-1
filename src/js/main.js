@@ -73,8 +73,10 @@ function getImage(e) {
 }
 
 function writeImage() {
+  data.photo = fr.result;
   profileImage.style.backgroundImage = `url(${fr.result})`;
   profilePreview.style.backgroundImage = `url(${fr.result})`;
+  console.log(data);
 }
 
 fileField.addEventListener('change', getImage);
@@ -93,7 +95,7 @@ const data = {
   palette: 1,
   name: '',
   job: '',
-  image: '',
+  photo: '',
   email: '',
   phone: '',
   linkedin: '',
@@ -123,7 +125,6 @@ const handleInput = (ev) => {
   const nameInput = ev.target.name;
   const valueInput = ev.target.value;
   data[nameInput] = valueInput;
-  console.log(data.name);
   previewCard();
 };
 
@@ -289,16 +290,19 @@ const previewContainerPalette3 = () => {
 
 palette.addEventListener('click', () => {
   if (palette1.checked) {
+    data.palette = 1;
     previewNamePalette1();
     previewJobPalette1();
     previewIconPalette1();
     previewContainerPalette1();
   } else if (palette2.checked) {
+    data.palette = 2;
     previewNamePalette2();
     previewJobPalette2();
     previewIconPalette2();
     previewContainerPalette2();
   } else if (palette3.checked) {
+    data.palette = 3;
     previewNamePalette3();
     previewJobPalette3();
     previewIconPalette3();
@@ -310,24 +314,39 @@ palette.addEventListener('click', () => {
 
 const resetButton = document.querySelector('.js_reset_button');
 
+const handleClickReset = (ev) => {
+  ev.preventDefault();
+  clearObjectData();
+  previewCard(data);
+  allInputs.reset();
+  clearImage();
+  console.log(data);
+};
 
+function clearImage() {
+  profileImage.style.backgroundImage = `url()`;
+  profilePreview.style.backgroundImage = `url()`;
+};
+
+function clearObjectData() {
+  data.palette = 1;
+  data.name = ``;
+  data.job = ``;
+  data.photo = ``;
+  data.email = ``;
+  data.phone = ``;
+  data.linkedin = ``;
+  data.github = ``;
+}
 
 resetButton.addEventListener('click', handleClickReset);
 
-function handleClickReset(ev) {
-  ev.preventDefault();
-  allInputs.reset();
-
-
-  previewName.innerHTML = `Nombre apellido`;
-  previewJob.innerHTML = `Front-end developer`;
-  previewEmail.value = ``;
-  previewGithub.value = ``;
-  previewLinkedin.value = ``;
-  previewPhone.value = ``;
-  // fileField.src = ``;
-  // profileImage.src = ``;
-  // profilePreview.src = ``
-}
-
-
+// previewName.innerHTML = `Nombre apellido`;
+// previewJob.innerHTML = `Front-end developer`;
+// previewEmail.value = ``;
+// previewGithub.value = ``;
+// previewLinkedin.value = ``;
+// previewPhone.value = ``;
+// // fileField.src = ``;
+// // profileImage.src = ``;
+// // profilePreview.src = ``
