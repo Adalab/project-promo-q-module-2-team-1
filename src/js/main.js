@@ -173,7 +173,7 @@ const handleClickReset = (ev) => {
 
 function clearImage() {
   profileImage.style.backgroundImage = `url()`;
-  profilePreview.style.backgroundImage = `url(/assets/images/retrato-defecto.png)`;
+  profilePreview.style.backgroundImage = `url(./assets/images/retrato-defecto.png)`;
 }
 
 function clearObjectData() {
