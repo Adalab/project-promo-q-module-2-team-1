@@ -188,16 +188,3 @@ function clearObjectData() {
 }
 
 resetButton.addEventListener('click', handleClickReset);
-
-// previewName.innerHTML = `Nombre apellido`;
-// previewJob.innerHTML = `Front-end developer`;
-// previewEmail.value = ``;
-// previewGithub.value = ``;
-// previewLinkedin.value = ``;
-// previewPhone.value = ``;
-// // fileField.src = ``;
-// // profileImage.src = ``;
-// // profilePreview.src = ``
-
-//Validación formulario
-
