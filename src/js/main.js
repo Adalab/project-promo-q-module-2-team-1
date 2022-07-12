@@ -129,14 +129,28 @@ const dataPhone = () => {
 };
 
 const dataLinkedin = () => {
-  previewLinkedin.href = data.linkedin;
+  if (data.linkedin.includes('https:/')) {
+    const dataLinkedin = /^(\w+):\/\/([^\/]+)\/([^\/]+\/)([^]+)$/.exec(data.linkedin);
+    data.linkedin = dataLinkedin[4];
+    previewLinkedin.href = dataLinkedin[0];
+  } else {
+    previewLinkedin.href = `https://www.linkedin.com/in/${data.linkedin}`;
+  }
 };
 
 const dataGithub = () => {
   if (data.github.includes('@')) {
     data.github = data.github.replace('@', '');
     previewGithub.href = `https://github.com/${data.github}`;
-  } else {
+  }
+  if (data.github.includes('https:/')) {
+    const dataGithub = /^(\w+):\/\/([^\/]+)\/([^]+)$/.exec(data.github);
+
+    console.log(dataGithub);
+    data.github = dataGithub[3];
+    previewGithub.href = dataGithub[0];
+  }
+  else {
     previewGithub.href = data.github;
   }
 };
@@ -155,7 +169,6 @@ const handleInput = (ev) => {
   const valueInput = ev.target.value;
   data[nameInput] = valueInput;
   previewCard();
-  console.log(previewGithub, previewLinkedin);
 };
 
 allInputs.addEventListener('keyup', handleInput); //change
