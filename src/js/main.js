@@ -104,28 +104,50 @@ const data = {
   github: '',
 };
 
-const previewCard = () => {
+const dataName = () => {
   if (data.name !== '') {
     previewName.innerHTML = data.name;
   } else {
     previewName.innerHTML = 'Nombre Apellido';
   }
+};
 
+const dataJob = () => {
   if (data.job !== '') {
     previewJob.innerHTML = data.job;
   } else {
     previewJob.innerHTML = 'Front-end developer';
   }
+};
 
+const dataEmail = () => {
   previewEmail.href = `mailto:${data.email}`;
+};
+
+const dataPhone = () => {
   previewPhone.href = data.phone;
+};
+
+const dataLinkedin = () => {
   previewLinkedin.href = data.linkedin;
+};
+
+const dataGithub = () => {
   if (data.github.includes('@')) {
-    const githubWithout = data.github.replace('@', '');
-    previewGithub.href = `https://github.com/${githubWithout}`;
+    data.github = data.github.replace('@', '');
+    previewGithub.href = `https://github.com/${data.github}`;
   } else {
     previewGithub.href = data.github;
   }
+};
+
+const previewCard = () => {
+  dataName();
+  dataJob();
+  dataEmail();
+  dataPhone();
+  dataLinkedin();
+  dataGithub();
 };
 
 const handleInput = (ev) => {
@@ -133,6 +155,7 @@ const handleInput = (ev) => {
   const valueInput = ev.target.value;
   data[nameInput] = valueInput;
   previewCard();
+  console.log(previewGithub, previewLinkedin);
 };
 
 allInputs.addEventListener('keyup', handleInput); //change
@@ -208,7 +231,8 @@ function backgroundCreate() {
 
 function handleCreateCard(ev) {
   ev.preventDefault();
-
+  console.log(data);
+  console.log(previewLinkedin);
   fetch('https://awesome-profile-cards.herokuapp.com/card', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -224,7 +248,7 @@ function handleCreateCard(ev) {
         urlCard.href = serverResp.cardURL;
         backgroundCreate();
       } else {
-        messageCard.innerHTML = 'Deben estar llenos los campos';
+        messageCard.innerHTML = 'Debes rellenar todos los campos';
       }
     });
 }
@@ -236,7 +260,7 @@ const buttonTwitter = document.querySelector('.js_button_twitter');
 
 function handleTwitterClick() {
   const hrefUrlCard = urlCard.href;
-  buttonTwitter.href = `https://twitter.com/intent/tweet?url=${hrefUrlCard}`;
+  buttonTwitter.href = `https://twitter.com/intent/tweet?text=%C2%A1¡¡He%20creado%20mi%20propia%20tarjeta%20de%20contacto!!!%20Puedes%20verla%20aqu%C3%AD%3A&url=${hrefUrlCard}`;
 }
 
 buttonTwitter.addEventListener('click', handleTwitterClick);
