@@ -121,10 +121,11 @@ const previewCard = () => {
   previewPhone.href = data.phone;
   previewLinkedin.href = data.linkedin;
   if (data.github.includes('@')) {
-    const githubWithout = data.github.replace("@", "");
+    const githubWithout = data.github.replace('@', '');
     previewGithub.href = `https://github.com/${githubWithout}`;
   } else {
-    previewGithub.href = data.github;}
+    previewGithub.href = data.github;
+  }
 };
 
 const handleInput = (ev) => {
@@ -138,17 +139,17 @@ allInputs.addEventListener('keyup', handleInput); //change
 
 //palette
 
-const allPalette = document.querySelectorAll ('.color-box-input');
+const allPalette = document.querySelectorAll('.color-box-input');
 const previewContainer = document.querySelector('.js_preview_palette');
 
 
 
-function paintPalette (palette){
+function paintPalette(palette) {
   previewContainer.classList.remove('palette-1', 'palette-2', 'palette-3');
   previewContainer.classList.add(`palette-${palette}`);
 }
 
-function handlerRadio(ev){
+function handlerRadio(ev) {
   const palette = parseInt(ev.currentTarget.value);
   console.log(palette);
   data.palette = palette;
@@ -156,7 +157,7 @@ function handlerRadio(ev){
 
 }
 
-for(const onePalette of allPalette){
+for (const onePalette of allPalette) {
   onePalette.addEventListener('click', handlerRadio);
 }
 
@@ -170,8 +171,14 @@ const handleClickReset = (ev) => {
   previewCard(data);
   allInputs.reset();
   clearImage();
+  clearSubmitButton();
   console.log(data);
 };
+
+function clearSubmitButton() {
+  linkCard.classList.add('collapsed');
+  submitButton.classList.remove('submit-button-gray');
+}
 
 function clearImage() {
   profileImage.style.backgroundImage = `url()`;
@@ -190,3 +197,46 @@ function clearObjectData() {
 }
 
 resetButton.addEventListener('click', handleClickReset);
+
+//Petición al servidor
+const messageCard = document.querySelector('.js_message');
+const urlCard = document.querySelector('.js_url');
+
+function backgroundCreate() {
+  submitButton.classList.add('submit-button-gray');
+}
+
+function handleCreateCard(ev) {
+  ev.preventDefault();
+
+  fetch('https://awesome-profile-cards.herokuapp.com/card', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  })
+    .then((response) => response.json())
+    .then((serverResp) => {
+      console.log(serverResp);
+
+      if (serverResp.success) {
+        messageCard.innerHTML = 'La tarjeta ha sido creada';
+        urlCard.innerHTML = serverResp.cardURL;
+        urlCard.href = serverResp.cardURL;
+        backgroundCreate();
+      } else {
+        messageCard.innerHTML = 'Deben estar llenos los campos';
+      }
+    });
+}
+
+submitButton.addEventListener('click', handleCreateCard);
+
+//Botón Twitter
+const buttonTwitter = document.querySelector('.js_button_twitter');
+
+function handleTwitterClick() {
+  const hrefUrlCard = urlCard.href;
+  buttonTwitter.href = `https://twitter.com/intent/tweet?url=${hrefUrlCard}`;
+}
+
+buttonTwitter.addEventListener('click', handleTwitterClick);
