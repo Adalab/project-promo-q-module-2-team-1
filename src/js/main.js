@@ -64,6 +64,8 @@ const fileField = document.querySelector('.js__profile-upload-btn');
 const profileImage = document.querySelector('.js__profile-image');
 const profilePreview = document.querySelector('.js__profile-preview');
 
+
+profilePreview.style.backgroundImage = `url(./assets/images/retrato-defecto.png)`;
 //@param { evento } e
 
 function getImage(e) {
