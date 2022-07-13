@@ -1,6 +1,6 @@
 'use strict';
 
-console.log('>> Ready :)');
+
 
 //Parte colapsables
 const designHeader = document.querySelector('.js_header_design');
@@ -68,17 +68,17 @@ const profilePreview = document.querySelector('.js__profile-preview');
 profilePreview.style.backgroundImage = `url(./assets/images/retrato-defecto.png)`;
 //@param { evento } e
 
-function getImage(e) {
+function getImage (e) {
   const myFile = e.currentTarget.files[0];
   fr.addEventListener('load', writeImage);
   fr.readAsDataURL(myFile);
 }
 
-function writeImage() {
+function writeImage () {
   data.photo = fr.result;
   profileImage.style.backgroundImage = `url(${fr.result})`;
   profilePreview.style.backgroundImage = `url(${fr.result})`;
-  console.log(data);
+
 }
 
 fileField.addEventListener('change', getImage);
@@ -93,7 +93,7 @@ const previewPhone = document.querySelector('.js_preview_phone');
 const previewLinkedin = document.querySelector('.js_preview_linkedin');
 const previewGithub = document.querySelector('.js_preview_github');
 
-const data = {
+let data = {
   palette: 1,
   name: '',
   job: '',
@@ -146,7 +146,7 @@ const dataGithub = () => {
   if (data.github.includes('https:/')) {
     const dataGithub = /^(\w+):\/\/([^\/]+)\/([^]+)$/.exec(data.github);
 
-    console.log(dataGithub);
+
     data.github = dataGithub[3];
     previewGithub.href = dataGithub[0];
   }
@@ -167,11 +167,25 @@ const previewCard = () => {
 const handleInput = (ev) => {
   const nameInput = ev.target.name;
   const valueInput = ev.target.value;
+  localStorage.setItem('dataStorage', JSON.stringify(data));
   data[nameInput] = valueInput;
+  console.log(data);
   previewCard();
 };
 
 allInputs.addEventListener('keyup', handleInput); //change
+
+//localStorage
+
+const dataLS = () => {
+  let dataStorage = JSON.parse(localStorage.getItem('dataStorage'));
+  if (dataStorage !== null) {
+    data = dataStorage;
+
+  }
+
+};
+dataLS();
 
 //palette
 
@@ -180,14 +194,13 @@ const previewContainer = document.querySelector('.js_preview_palette');
 
 
 
-function paintPalette(palette) {
+function paintPalette (palette) {
   previewContainer.classList.remove('palette-1', 'palette-2', 'palette-3');
   previewContainer.classList.add(`palette-${palette}`);
 }
 
-function handlerRadio(ev) {
+function handlerRadio (ev) {
   const palette = parseInt(ev.currentTarget.value);
-  console.log(palette);
   data.palette = palette;
   paintPalette(palette);
 
@@ -208,20 +221,20 @@ const handleClickReset = (ev) => {
   allInputs.reset();
   clearImage();
   clearSubmitButton();
-  console.log(data);
+
 };
 
-function clearSubmitButton() {
+function clearSubmitButton () {
   linkCard.classList.add('collapsed');
   submitButton.classList.remove('submit-button-gray');
 }
 
-function clearImage() {
+function clearImage () {
   profileImage.style.backgroundImage = `url()`;
   profilePreview.style.backgroundImage = `url(./assets/images/retrato-defecto.png)`;
 }
 
-function clearObjectData() {
+function clearObjectData () {
   data.palette = 1;
   data.name = ``;
   data.job = ``;
@@ -238,14 +251,14 @@ resetButton.addEventListener('click', handleClickReset);
 const messageCard = document.querySelector('.js_message');
 const urlCard = document.querySelector('.js_url');
 
-function backgroundCreate() {
+function backgroundCreate () {
   submitButton.classList.add('submit-button-gray');
 }
 
-function handleCreateCard(ev) {
+function handleCreateCard (ev) {
   ev.preventDefault();
-  console.log(data);
-  console.log(previewLinkedin);
+
+
   fetch('https://awesome-profile-cards.herokuapp.com/card', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -253,7 +266,7 @@ function handleCreateCard(ev) {
   })
     .then((response) => response.json())
     .then((serverResp) => {
-      console.log(serverResp);
+
 
       if (serverResp.success) {
         messageCard.innerHTML = 'La tarjeta ha sido creada';
@@ -271,7 +284,7 @@ submitButton.addEventListener('click', handleCreateCard);
 //Botón Twitter
 const buttonTwitter = document.querySelector('.js_button_twitter');
 
-function handleTwitterClick() {
+function handleTwitterClick () {
   const hrefUrlCard = urlCard.href;
   buttonTwitter.href = `https://twitter.com/intent/tweet?text=%C2%A1¡¡He%20creado%20mi%20propia%20tarjeta%20de%20contacto!!!%20Puedes%20verla%20aqu%C3%AD%3A&url=${hrefUrlCard}`;
 }
