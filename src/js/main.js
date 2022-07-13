@@ -132,11 +132,26 @@ const dataLinkedin = () => {
   if (data.linkedin.includes('https:/')) {
     const dataLinkedin = /^(\w+):\/\/([^\/]+)\/([^\/]+\/)([^]+)$/.exec(data.linkedin);
     data.linkedin = dataLinkedin[4];
-    previewLinkedin.href = dataLinkedin[0];
-  } else {
+    previewLinkedin.href = `https://www.linkedin.com/in/${dataLinkedin[4]}`;
+  } 
+  if (data.linkedin.includes('www.linkedin.com/')) {
+    const dataLinkedin = /^([^\/]+)\/([^]+)$/.exec(data.linkedin);
+    console.log(dataLinkedin);
+    data.linkedin = dataLinkedin[2];
+    previewLinkedin.href = `https://www.linkedin.com/in/${dataLinkedin[2]}`;
+
+  }
+  if (data.linkedin.includes('linkedin.com/')) {
+    const dataLinkedin = /^([^\/]+)\/([^]+)$/.exec(data.linkedin);
+    console.log(dataLinkedin);
+    data.linkedin = dataLinkedin[2];
+    previewLinkedin.href = `https://www.linkedin.com/in/${dataLinkedin[2]}`;
+
+  }else {
     previewLinkedin.href = `https://www.linkedin.com/in/${data.linkedin}`;
   }
 };
+
 
 const dataGithub = () => {
   if (data.github.includes('@')) {
@@ -145,13 +160,23 @@ const dataGithub = () => {
   }
   if (data.github.includes('https:/')) {
     const dataGithub = /^(\w+):\/\/([^\/]+)\/([^]+)$/.exec(data.github);
-
-
     data.github = dataGithub[3];
     previewGithub.href = dataGithub[0];
   }
-  else {
-    previewGithub.href = data.github;
+  if (data.github.includes('www.github.com/')) {
+    const dataGithub = /^([^\/]+)\/([^]+)$/.exec(data.github);
+    data.github = dataGithub[2];
+    previewGithub.href = dataGithub[0];
+
+  }
+  if (data.github.includes('github.com/')) {
+    const dataGithub = /^([^\/]+)\/([^]+)$/.exec(data.github);
+    console.log(dataGithub);
+    data.github = dataGithub[2];
+    previewGithub.href = `https://${dataGithub[0]}`;
+
+  }else {
+    previewGithub.href = `https://github.com/${data.github}`;
   }
 };
 
@@ -169,11 +194,12 @@ const handleInput = (ev) => {
   const valueInput = ev.target.value;
   localStorage.setItem('dataStorage', JSON.stringify(data));
   data[nameInput] = valueInput;
-  console.log(data);
   previewCard();
 };
 
 allInputs.addEventListener('keyup', handleInput); //change
+allInputs.addEventListener('change', handleInput);
+
 
 //localStorage
 
@@ -181,11 +207,34 @@ const dataLS = () => {
   let dataStorage = JSON.parse(localStorage.getItem('dataStorage'));
   if (dataStorage !== null) {
     data = dataStorage;
-
   }
+  return data;
+};
+
+const nameInput = document.querySelector('.js_name_input');
+const jobInput = document.querySelector('.js_job_input');
+const emailInput = document.querySelector('.js_email_input');
+const phoneInput = document.querySelector('.js_phone_input');
+const linkedinInput = document.querySelector('.js_linkedin_input');
+const githubInput = document.querySelector('.js_github_input');
+
+const paintData =() =>{
+  data = dataLS();
+  console.log(data);
+  nameInput.value= `${data.name}`;
+  jobInput.value= `${data.job}`;
+  emailInput.value= `${data.email}`;
+  phoneInput.value= `${data.phone}`;
+  linkedinInput.value= `${data.linkedin}`;
+  githubInput.value= `${data.github}`;
+  profileImage.style.backgroundImage = `url(${data.photo})`;
+  profilePreview.style.backgroundImage = `url(${data.photo})`;
 
 };
-dataLS();
+
+paintData();
+previewCard(data);
+
 
 //palette
 
@@ -221,7 +270,7 @@ const handleClickReset = (ev) => {
   allInputs.reset();
   clearImage();
   clearSubmitButton();
-
+  localStorage.removeItem('dataStorage');
 };
 
 function clearSubmitButton () {
