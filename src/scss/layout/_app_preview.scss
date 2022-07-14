@@ -65,7 +65,7 @@
     }
 
     .preview-img {
-      background-image: url(./assets/images/retrato-defecto.png);
+      background-image: url();
       background-size: cover;
       background-position: 50%;
       background-repeat: no-repeat;
@@ -110,50 +110,50 @@
   }
 }
 
-.palette-1{
-  .preview-name{
+.palette-1 {
+  .preview-name {
     color: $font_color_subtitle;
   }
-  .preview-job{
+  .preview-job {
     color: #438792;
   }
-  .icons-preview{
+  .icons-preview {
     border: solid 2px #a2deaf;
     color: $font_color_subtitle;
   }
-  .preview-container-title{
+  .preview-container-title {
     border-left: 5px solid #438792;
   }
 }
 
-.palette-2{
-  .preview-name{
+.palette-2 {
+  .preview-name {
     color: #420101;
   }
-  .preview-job{
+  .preview-job {
     color: #bd1010;
   }
-  .icons-preview{
+  .icons-preview {
     border: solid 2px #e95626;
     color: #420101;
   }
-  .preview-container-title{
+  .preview-container-title {
     border-left: 5px solid #bd1010;
   }
 }
 
-.palette-3{
-  .preview-name{
+.palette-3 {
+  .preview-name {
     color: #3e5b65;
   }
-  .preview-job{
+  .preview-job {
     color: #eab052;
   }
-  .icons-preview{
+  .icons-preview {
     border: solid 2px #a0c0cf;
     color: #3e5b65;
   }
-  .preview-container-title{
+  .preview-container-title {
     border-left: 5px solid #eab052;
   }
 }

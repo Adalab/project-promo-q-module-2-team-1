@@ -65,20 +65,21 @@ const profileImage = document.querySelector('.js__profile-image');
 const profilePreview = document.querySelector('.js__profile-preview');
 
 
-profilePreview.style.backgroundImage = `url(./assets/images/retrato-defecto.png)`;
+
 //@param { evento } e
 
 function getImage (e) {
   const myFile = e.currentTarget.files[0];
   fr.addEventListener('load', writeImage);
   fr.readAsDataURL(myFile);
+
 }
 
 function writeImage () {
   data.photo = fr.result;
   profileImage.style.backgroundImage = `url(${fr.result})`;
   profilePreview.style.backgroundImage = `url(${fr.result})`;
-
+  localStorage.setItem('dataStorage', JSON.stringify(data));
 }
 
 fileField.addEventListener('change', getImage);
@@ -133,7 +134,7 @@ const dataLinkedin = () => {
     const dataLinkedin = /^(\w+):\/\/([^\/]+)\/([^\/]+\/)([^]+)$/.exec(data.linkedin);
     data.linkedin = dataLinkedin[4];
     previewLinkedin.href = `https://www.linkedin.com/in/${dataLinkedin[4]}`;
-  } 
+  }
   if (data.linkedin.includes('www.linkedin.com/')) {
     const dataLinkedin = /^([^\/]+)\/([^]+)$/.exec(data.linkedin);
     console.log(dataLinkedin);
@@ -147,7 +148,7 @@ const dataLinkedin = () => {
     data.linkedin = dataLinkedin[2];
     previewLinkedin.href = `https://www.linkedin.com/in/${dataLinkedin[2]}`;
 
-  }else {
+  } else {
     previewLinkedin.href = `https://www.linkedin.com/in/${data.linkedin}`;
   }
 };
@@ -175,7 +176,7 @@ const dataGithub = () => {
     data.github = dataGithub[2];
     previewGithub.href = `https://${dataGithub[0]}`;
 
-  }else {
+  } else {
     previewGithub.href = `https://github.com/${data.github}`;
   }
 };
@@ -218,18 +219,22 @@ const phoneInput = document.querySelector('.js_phone_input');
 const linkedinInput = document.querySelector('.js_linkedin_input');
 const githubInput = document.querySelector('.js_github_input');
 
-const paintData =() =>{
+const paintData = () => {
   data = dataLS();
   console.log(data);
-  nameInput.value= `${data.name}`;
-  jobInput.value= `${data.job}`;
-  emailInput.value= `${data.email}`;
-  phoneInput.value= `${data.phone}`;
-  linkedinInput.value= `${data.linkedin}`;
-  githubInput.value= `${data.github}`;
-  profileImage.style.backgroundImage = `url(${data.photo})`;
-  profilePreview.style.backgroundImage = `url(${data.photo})`;
+  nameInput.value = `${data.name}`;
+  jobInput.value = `${data.job}`;
+  emailInput.value = `${data.email}`;
+  phoneInput.value = `${data.phone}`;
+  linkedinInput.value = `${data.linkedin}`;
+  githubInput.value = `${data.github}`;
 
+  if (data.photo === '') {
+    clearImage();
+  } else {
+    profileImage.style.backgroundImage = `url(${data.photo})`;
+    profilePreview.style.backgroundImage = `url(${data.photo})`;
+  }
 };
 
 paintData();
