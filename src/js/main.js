@@ -221,7 +221,6 @@ const githubInput = document.querySelector('.js_github_input');
 
 const paintData = () => {
   data = dataLS();
-  console.log(data);
   nameInput.value = `${data.name}`;
   jobInput.value = `${data.job}`;
   emailInput.value = `${data.email}`;
@@ -235,18 +234,17 @@ const paintData = () => {
     profileImage.style.backgroundImage = `url(${data.photo})`;
     profilePreview.style.backgroundImage = `url(${data.photo})`;
   }
+  const palette = parseInt(data.palette);
+  paintPalette(palette);
 };
-
-paintData();
-previewCard(data);
-
 
 //palette
 
 const allPalette = document.querySelectorAll('.color-box-input');
 const previewContainer = document.querySelector('.js_preview_palette');
 
-
+paintData();
+previewCard(data);
 
 function paintPalette (palette) {
   previewContainer.classList.remove('palette-1', 'palette-2', 'palette-3');
@@ -257,7 +255,6 @@ function handlerRadio (ev) {
   const palette = parseInt(ev.currentTarget.value);
   data.palette = palette;
   paintPalette(palette);
-
 }
 
 for (const onePalette of allPalette) {
@@ -274,6 +271,8 @@ const handleClickReset = (ev) => {
   previewCard(data);
   allInputs.reset();
   clearImage();
+  const palette = parseInt(data.palette);
+  paintPalette(palette);
   clearSubmitButton();
   localStorage.removeItem('dataStorage');
 };
