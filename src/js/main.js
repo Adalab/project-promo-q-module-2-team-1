@@ -1,3 +1,5 @@
+/* eslint-disable no-empty */
+/* eslint-disable indent */
 'use strict';
 
 
@@ -126,7 +128,11 @@ const dataEmail = () => {
 };
 
 const dataPhone = () => {
-  previewPhone.href = `tel:${data.phone}`;
+  if(!(/^\d{9}$/.test(data.phone))){
+    previewPhone.href = `tel:${data.phone}`;
+  } else {
+    //alert('Introduce un teléfono correcto');
+  }
 };
 
 const dataLinkedin = () => {
@@ -310,17 +316,14 @@ function backgroundCreate () {
 
 function handleCreateCard (ev) {
   ev.preventDefault();
-
-
-  fetch('https://awesome-profile-cards.herokuapp.com/card', {
+  if (!submitButton.classList.contains('submit-button-gray')){
+    fetch('https://awesome-profile-cards.herokuapp.com/card', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data),
   })
     .then((response) => response.json())
     .then((serverResp) => {
-
-
       if (serverResp.success) {
         messageCard.innerHTML = 'La tarjeta ha sido creada';
         urlCard.innerHTML = serverResp.cardURL;
@@ -330,6 +333,9 @@ function handleCreateCard (ev) {
         messageCard.innerHTML = 'Debes rellenar todos los campos';
       }
     });
+  }else {
+
+  }
 }
 
 submitButton.addEventListener('click', handleCreateCard);
