@@ -126,7 +126,7 @@ const dataEmail = () => {
 };
 
 const dataPhone = () => {
-  previewPhone.href = data.phone;
+  previewPhone.href = `tel:${data.phone}`;
 };
 
 const dataLinkedin = () => {
