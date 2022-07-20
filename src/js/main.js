@@ -48,17 +48,6 @@ designHeader.addEventListener('click', handleClick);
 dataHeader.addEventListener('click', handleClick);
 shareHeader.addEventListener('click', handleClick);
 
-//parte link
-const submitButton = document.querySelector('.js_submit_button');
-const linkCard = document.querySelector('.js_link_card');
-
-const handleClickSubmit = (ev) => {
-  ev.preventDefault();
-
-  linkCard.classList.remove('collapsed');
-};
-submitButton.addEventListener('click', handleClickSubmit);
-
 //parte imagen
 
 const fr = new FileReader();
@@ -281,7 +270,9 @@ const handleClickReset = (ev) => {
 };
 
 function clearSubmitButton () {
-  linkCard.classList.add('collapsed');
+  buttonTwitter.classList.add('collapsed');
+  urlCard.classList.add('collapsed');
+  messageCard.classList.add('collapsed');
   submitButton.classList.remove('submit-button-gray');
 }
 
@@ -306,14 +297,24 @@ resetButton.addEventListener('click', handleClickReset);
 //Petición al servidor
 const messageCard = document.querySelector('.js_message');
 const urlCard = document.querySelector('.js_url');
+const submitButton = document.querySelector('.js_submit_button');
+
 
 function backgroundCreate () {
   submitButton.classList.add('submit-button-gray');
 }
+//parte link
+
+
+const removeCollapsed = (item) => {
+
+  item.classList.remove('collapsed');
+};
 
 function handleCreateCard (ev) {
   ev.preventDefault();
-  console.log(data);
+  removeCollapsed(messageCard);
+  removeCollapsed(urlCard);
   if (!submitButton.classList.contains('submit-button-gray')){
     fetch('https://awesome-profile-cards.herokuapp.com/card', {
     method: 'POST',
@@ -327,6 +328,7 @@ function handleCreateCard (ev) {
         urlCard.innerHTML = serverResp.cardURL;
         urlCard.href = serverResp.cardURL;
         backgroundCreate();
+        removeCollapsed(buttonTwitter);
       } else {
         messageCard.innerHTML = 'Debes rellenar todos los campos';
       }
@@ -335,6 +337,8 @@ function handleCreateCard (ev) {
 
   }
 }
+
+
 
 submitButton.addEventListener('click', handleCreateCard);
 
