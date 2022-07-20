@@ -2,40 +2,171 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Awesome Profile-Cards</title>
+    <script src="https://kit.fontawesome.com/9a646766b9.js" crossorigin="anonymous">
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&family=Montserrat:wght@100;200;400;500;700&family=Open+Sans:wght@400;600&display=swap"
         rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6c4bd50c50.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./assets/css/main.css">
 </head>
 
-<body>
-    <header class="header">
-        <div class="header__logo">
-            <img src="./assets/images/logo-awesome-profile-cards.svg" alt="logo" title="logo" />
-        </div>
+<body class="body">
+    <header class="header-app">
+        <a href="./index.html" title="inicio"><img class="header-app__logo"
+                src="./assets/images/logo-awesome-profile-cards.svg" alt="logo" title="logo" /></a>
     </header>
-    <main>
-        
-        <form action="">
-            
-            
-            
+    <main class="main-app">
+        <section class="section-preview">
+            <div class="container-preview-button js_reset_button">
+                <button class="preview-button ">
+                    <i class="fa-solid fa-trash-can icon-button"></i>
+                    <span>reset</span>
+                </button>
+            </div>
+            <div class="preview-data palette-1 js_preview_palette">
+                <div class="preview-container-title js_preview_container">
+                    <h2 class="preview-name js_preview_name">nombre apellido</h2>
+                    <h3 class="preview-job js_preview_job">front-end developer</h3>
+                </div>
+                <div class="preview-img js__profile-preview">
+                    <img src="" alt="">
+                </div>
+                <div class="preview-icon-contact">
+                    <a href="" target="_blank" class="link-preview-icon js_preview_phone">
+                        <i class="fa-solid fa-mobile-screen-button preview-icon mobile-preview-icon icons-preview"></i></a>
+                    <a href="" target="_blank" class="link-preview-icon js_preview_email"><i
+                            class="fa-regular fa-envelope preview-icon icons-preview"></i></a>
+                    <a href="" target="_blank" class="link-preview-icon js_preview_linkedin"><i
+                            class="fa-brands fa-linkedin-in preview-icon  icons-preview"></i></a>
+                    <a href="" target="_blank" class="link-preview-icon js_preview_github"><i
+                            class="fa-brands fa-github-alt preview-icon icons-preview"></i></a>
+                </div>
+            </div>
+        </section>
+        <form action="" class="form-container js_all_inputs">
+            <fieldset>
+              <!-- <section class="design">
+                <h2 class="design-title">
+                  <i class="fa-solid fa-object-ungroup"></i>diseña
+                </h2>
+                <i class="fa-solid fa-angle-up"></i>
+              </section> -->
+              <section class="section-form js_header_design">
+                  <h2 class="section-form-title">
+                      <i class="fa-solid fa-object-ungroup"></i>diseña
+                  </h2>
+                  <i class="fa-solid fa-angle-up rotate js_angle_design"></i>
+              </section>
+              <section class="design-colors js_content_design collapsed">
+                <h3 class="colors-title">colores</h3>
+                <div class="select-colors js_palette">
+                  <label for="color-box1" class="color-box-label">
+                    <input type="radio" name="palette" id="color-box1" class="color-box-input js_palette1" value="1" checked />
+                    <div class="color-div one"></div>
+                    <div class="color-div two"></div>
+                    <div class="color-div three"></div>
+                  </label>
+                  <label for="color-box2" class="color-box-label">
+                    <input type="radio" name="palette" id="color-box2" class="color-box-input js_palette2" value="2" />
+                    <div class="color-div four"></div>
+                    <div class="color-div five"></div>
+                    <div class="color-div six"></div>
+                  </label>
+                  <label for="color-box3" class="color-box-label">
+                    <input type="radio" name="palette" id="color-box3" class="color-box-input js_palette3" value="3" />
+                    <div class="color-div seven"></div>
+                    <div class="color-div eight"></div>
+                    <div class="color-div nine"></div>
+                  </label>
+                </div>
+              </section>
+            </fieldset>
+            <fieldset>
+              <!-- <section class="data">
+                <h2 class="data-title"><i class="fa-solid fa-keyboard"> </i>rellena</h2>
+                <i class="fa-solid fa-angle-up"></i>
+              </section> -->
+              <section class="section-form js_header_data">
+                  <h2 class="section-form-title">
+                      <i class="fa-solid fa-keyboard"></i>rellena
+                  </h2>
+                  <i class="fa-solid fa-angle-up rotate js_angle_data"></i>
+              </section>
+              <section class="data-input-section js_content_data collapsed">
+                <label for="name" class="data-label">Nombre completo
+                  <input type="text" name="name" id="name" class="data-input js_name_input" placeholder="Ej: Sally Jill" />
+                </label>
+                <label for="job" class="data-label">Puesto<input type="text" name="job" id="job" class="data-input js_job_input"
+                    placeholder="Ej: Front-end unicorn" />
+                </label>
+                <label for="profile-pic" class="data-label">Imagen de perfil
+                  <div class="image-input-div">
+                    <label for="profile-pic" class="image-input-label">Añadir imagen
+                      <input type="file" id="profile-pic" class="image-input js__profile-upload-btn" name="photo" />
+                    </label>
+                    <div class="image_preview js__profile-image"></div>
+                  </div>
+                </label>
+
+
+                <label for="email" class="data-label">Email<input type="email" name="email" id="email"
+                    class="data-input js_email_input" placeholder="Ej: Sally-hill@gmail.com" />
+                </label>
+                <label for="phone" class="data-label">Teléfono<input type="phone" name="phone" id="phone"
+                    class="data-input js_phone_input" placeholder="Ej: 555-55-55-55" />
+                </label>
+                <label for="linkedin" class="data-label">Linkedin<input type="text" name="linkedin" id="linkedin"
+                    class="data-input js_linkedin_input" placeholder="Ej: linkedin.com/in/sally.hill" />
+                </label>
+                <label for="github" class="data-label ">Github<input type="text" name="github" id="github"
+                    class="data-input js_github_input" placeholder="Ej:@sally-hill" />
+                </label>
+              </section>
+            </fieldset>
+            <fieldset>
+              <!-- <legend>
+                <h2 class="share"><i class="fa-solid fa-share-nodes"></i> comparte</h2>
+                <i class="fa-solid fa-angle-up"></i>
+              </legend> -->
+              <section class="section-form js_header_share">
+                  <h2 class="section-form-title">
+                      <i class="fa-solid fa-share-nodes"></i>comparte
+                  </h2>
+                  <i class="fa-solid fa-angle-up rotate js_angle_share"></i>
+              </section>
+              <div class="create_button js_content_share collapsed">
+                <button class="submit_button js_submit_button" type="submit">
+                  <i class="fa fa-address-card"></i> crear tarjeta
+                </button>
+                <section class="font_success collapsed js_link_card">
+                  <p class="card_create js_message"></p>
+                  <a href="" class="card_link js_url" target="_blank"></a>
+
+                  <a class="button_twiter js_button_twitter" href="" target="_blank"><i class="fa-brands fa-twitter"></i> Compartir
+                    en twitter</a>
+                </section>
+              </div>
+
+            </fieldset>
         </form>
     </main>
     <footer class="footer">
         <div class="footer__text">
-            <p>Awesome profile-cards @2018</p>
+            <p>Monday haters <small>&copy;2022</small></p>
         </div>
         <div class="footer__logo">
-            <img src="./assets/images/logo-adalab.png" alt="logo" title="logo" />
+            <a href="./index.html#"> <img class="footer__logo--img" src="./assets/images/logo-adalab.png" alt="logo"
+                    title="logo" /></a>
         </div>
     </footer>
+    <script src="./assets/js/main.js"></script>
 </body>
 
 </html>

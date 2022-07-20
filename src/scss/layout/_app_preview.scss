@@ -1,99 +1,192 @@
+.section-preview {
+  padding: 38px 35px 40px 45px;
+  background-image: linear-gradient(
+    to bottom,
+    $blue,
+    $color_pink
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @media all and (min-width: 768px) {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    margin: 20px;
+    border-radius: 6px;
+  }
 
-.section-preview{
-    
-    padding: 38px 35px 40px 45px;
-    background-image: linear-gradient(to bottom, $blue, pink);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    @media all and (min-width: 768px) {
-        grid-column: 2 / 3;;
-        grid-row: 1 / 2;
-        margin: 20px;
-        border-radius: 6px;
+  .preview-button {
+    width: 94px;
+    height: 36px;
+    border-radius: 20px;
+    border: solid 1px $color_pink;
+    background-color: $background_index;
+    text-transform: uppercase;
+    color: $color_pink;
+    grid-column: 1 / 2;
+    font-size: 1.4rem;
+    font-weight: bold;
+    .icon-button {
+      margin-right: 6px;
     }
+  }
 
-    .preview-button{
-        width: 94px;
-        height: 36px;
-        border-radius: 20px;
-        border: solid 1px $color_pink;
-        background-color: $background_index;
-        text-transform: uppercase;
-        color: $color_pink;
-        grid-column: 1 / 2;
+  .preview-data {
+    width: 240px;
+    margin: 20px 0 0;
+    padding: 21px 0 12px;
+    border-radius: 2px;
+    box-shadow: 0 1px 10px 0 $font_color_primary;
+    background-color: $background_secondary;
+    font-family: $font_card;
+
+    .preview-container-title {
+      padding-left: 20px;
+      //border-left: 5px solid #438792;
+
+      .preview-name {
+        font-size: 18px;
         font-weight: bold;
-        font-size: 1.4rem;
+        line-height: 1.15;
+        margin-bottom: 5px;
+        text-transform: capitalize;
+        // color: $font_color_subtitle;
+      }
 
-        .icon-button{
-            margin-right: 6px;
+      .preview-job {
+        font-size: 16px;
+        line-height: 1.25;
+        font-weight: 500;
+        //color: $font_color_primary;
+        &::first-letter {
+          text-transform: uppercase;
         }
+      }
     }
 
-    .preview-data{
-        width: 240px;
-        margin: 20px 0 0;
-        padding: 21px 0 12px;
-        border-radius: 2px;
-        box-shadow: 0 1px 10px 0 $font_color_primary;
-        background-color: $background_secondary;
-        font-family: $font_card;
-
-        .preview-container-title{
-            padding-left: 20px;
-            border-left: 5px solid $color_title_button;
-
-            .preview-name{
-                font-size: 1.8rem;
-                font-weight: bold;
-                line-height: 1.15;
-                margin-bottom: 5px;
-                text-transform: capitalize;
-                color: $color_neutro;
-            }
-
-            .preview-job{
-                font-size: 1.6rem;
-                line-height: 1.25;
-                font-weight: 500;
-                color: $color_pink;
-                &::first-letter{
-                    text-transform: uppercase
-                    ;
-                }
-            }
-        }
-
-        .preview-img{
-            background-image: linear-gradient(to bottom, $color_title_button, $background_index);
-            width: 240px;
-            height: 200px;
-            margin: 10px 0;
-        }
-
-        .preview-icon-contact{
-            text-align: center;
-
-            .link-preview-icon{
-                color: $color_neutro;
-
-                .preview-icon{
-                    margin: 0 10px 0 0;
-                    padding: 8px 8px;
-                    border-radius: 50px;
-                    border: solid 2px $blue;
-                }
-                
-                .mobile-preview-icon{
-                    padding: 8px 10px;
-                }
-            }
-        }
+    .preview-img {
+      background-image: url();
+      background-size: cover;
+      background-position: 50%;
+      background-repeat: no-repeat;
+      width: 240px;
+      height: 200px;
+      margin: 10px 0;
     }
+
+    .preview-name {
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 1.15;
+      margin-bottom: 5px;
+      text-transform: capitalize;
+    }
+
+    //.link-preview-icon {
+    //color: $font_color_subtitle;
+
+    .preview-icon {
+      margin: 0 10px 0 0;
+      padding: 8px 8px;
+      border-radius: 50px;
+      //border: solid 2px;
+    }
+
+    .mobile-preview-icon {
+      padding: 8px 10px;
+      margin-left: 20px;
+    }
+  }
 }
+//}
+
 .container-preview-button {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    padding-left: 35px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-left: 35px;
+
+  :hover {
+    cursor: pointer;
+  }
+}
+
+.palette-1 {
+  .preview-name {
+    color: $font_color_subtitle;
+  }
+  .preview-job {
+    color: #438792;
+  }
+  .icons-preview {
+    border: solid 2px #a2deaf;
+    color: $font_color_subtitle;
+  }
+  .preview-container-title {
+    border-left: 5px solid #438792;
+  }
+}
+
+.palette-2 {
+  .preview-name {
+    color: #420101;
+  }
+  .preview-job {
+    color: #bd1010;
+  }
+  .icons-preview {
+    border: solid 2px #e95626;
+    color: #420101;
+  }
+  .preview-container-title {
+    border-left: 5px solid #bd1010;
+  }
+}
+
+.palette-3 {
+  .preview-name {
+    color: #3e5b65;
+  }
+  .preview-job {
+    color: #eab052;
+  }
+  .icons-preview {
+    border: solid 2px #a0c0cf;
+    color: #3e5b65;
+  }
+  .preview-container-title {
+    border-left: 5px solid #eab052;
+  }
+}
+
+.palette-4 {
+  .preview-name {
+    color: #b0008a;
+  }
+  .preview-job {
+    color: #b169c5;
+  }
+  .icons-preview {
+    border: solid 2px #0b8dc9;
+    color: #b0008a;
+  }
+  .preview-container-title {
+    border-left: 5px solid #b169c5;
+  }
+}
+
+.palette-5 {
+  .preview-name {
+    color: #21d0bb;
+  }
+  .preview-job {
+    color: #f637dd;
+  }
+  .icons-preview {
+    border: solid 2px #ffef3c;
+    color: #21d0bb;
+  }
+  .preview-container-title {
+    border-left: 5px solid #f637dd;
+  }
 }

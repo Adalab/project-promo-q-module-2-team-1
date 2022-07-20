@@ -1,5 +1,5 @@
 .main-container {
-    height: 81vh;
+    height: 85vh;
     background-color: $background_index;
     @media all and (min-width: 768px) {
         height: 87vh;
@@ -98,4 +98,10 @@
     @media all and (min-width: 768px) {
         font-size: 2.8rem;
     }
+}
+
+.body {
+    overflow-x: hidden;
+    
+    
 }

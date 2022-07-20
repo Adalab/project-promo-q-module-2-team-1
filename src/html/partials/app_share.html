@@ -3,17 +3,20 @@
     <h2 class="share"><i class="fa-solid fa-share-nodes"></i> comparte</h2>
     <i class="fa-solid fa-angle-up"></i>
   </legend> -->
-  <include src="./app_section_title.html" title="comparte" clase="fa-solid fa-share-nodes">
+  <include src="./app_section_title.html" title="comparte" clase="fa-solid fa-share-nodes" classjs="js_header_share"
+    angleJs="js_angle_share">
   </include>
-  <div class="create_button js_section_share collapsed">
-    <button class="submit_button" type="submit">
+  <div class="create_button js_content_share collapsed">
+    <button class="submit_button js_submit_button" type="submit">
       <i class="fa fa-address-card"></i> crear tarjeta
     </button>
-  </div>
-</fieldset>
-<section class="font_success collapsed">
-  <p class="card_create">La tarjeta ha sido creada:</p>
-  <a href="#" class="card_link">https://awesome-profile-card.com?id=A456DF0001</a>
+    <section class="font_success collapsed js_link_card">
+      <p class="card_create js_message"></p>
+      <a href="" class="card_link js_url" target="_blank"></a>
 
-  <a class="button_twiter" href="#"><i class="fa-brands fa-twitter"></i> Compartir en twitter</a>
-</section>
+      <a class="button_twiter js_button_twitter" href="" target="_blank"><i class="fa-brands fa-twitter"></i> Compartir
+        en twitter</a>
+    </section>
+  </div>
+
+</fieldset>
