@@ -69,7 +69,7 @@ function getImage (e) {
 function writeImage () {
   data.photo = fr.result;
   profileImage.style.backgroundImage = `url(${fr.result})`;
-  profilePreview.style.backgroundImage = `url(${fr.result})`;
+  profilePreview.style.backgroundImage = `url($ {fr.result})`;
   localStorage.setItem('dataStorage', JSON.stringify(data));
 }
 
